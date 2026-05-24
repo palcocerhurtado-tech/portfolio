@@ -276,20 +276,22 @@
     .portrait-card {
       position: absolute;
       right: 0;
-      top: 42px;
-      width: min(380px, 86%);
+      bottom: 0;
+      width: min(220px, 44%);
+      max-height: 310px;
       border: 1px solid var(--gold-line);
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(255, 240, 207, 0.12), rgba(112, 199, 183, 0.08)), rgba(7, 8, 9, 0.9);
       box-shadow: var(--shadow);
       overflow: hidden;
+      z-index: 1;
     }
 
     .portrait-card img {
       width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: center bottom;
+      height: 310px;
+      object-fit: cover;
+      object-position: top center;
     }
 
     .system-card {
@@ -303,6 +305,7 @@
       padding: 18px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
+      z-index: 2;
     }
 
     .system-card:nth-of-type(2) {
