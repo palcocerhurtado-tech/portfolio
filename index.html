@@ -4,1268 +4,808 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pablo Alcocer Hurtado · IA, Marketing Creativo y Automatización</title>
-  <meta name="description" content="Portfolio de Pablo Alcocer Hurtado: consultor IA, perfil de marketing creativo y constructor de automatizaciones, productos digitales y sistemas operativos para marcas y negocios.">
-  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Portfolio de Pablo Alcocer Hurtado: consultor IA, marketing creativo y automatización de procesos para marcas y negocios.">
+  <meta name="theme-color" content="#070809">
   <meta property="og:title" content="Pablo Alcocer Hurtado · IA, Marketing Creativo y Automatización">
-  <meta property="og:description" content="Consultor IA, perfil de marketing creativo y constructor de automatizaciones, productos digitales y sistemas operativos para marcas y negocios.">
+  <meta property="og:description" content="Consultor IA, marketing creativo y automatización de procesos para marcas y negocios.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://palcocerhurtado-tech.github.io/portfolio/">
   <meta name="twitter:card" content="summary_large_image">
   <style>
     :root {
-      --bg: #070809;
-      --ink: #f7efe0;
-      --muted: #b7ac9a;
-      --quiet: #7f7668;
-      --panel: rgba(18, 20, 22, 0.78);
-      --panel-strong: rgba(22, 24, 27, 0.94);
-      --cream: #fff0cf;
-      --gold: #d9b465;
-      --gold-2: #f0cf86;
-      --teal: #70c7b7;
-      --rose: #ff5e9e;
-      --line: rgba(255, 240, 207, 0.13);
-      --gold-line: rgba(217, 180, 101, 0.34);
-      --shadow: 0 26px 90px rgba(0, 0, 0, 0.42);
-      --radius: 8px;
-      --max: 1180px;
+      --bg:       #070809;
+      --ink:      #f7efe0;
+      --muted:    #b7ac9a;
+      --quiet:    #7f7668;
+      --gold:     #d9b465;
+      --gold2:    #f0cf86;
+      --teal:     #70c7b7;
+      --line:     rgba(255,240,207,.13);
+      --gold-line:rgba(217,180,101,.38);
+      --panel:    rgba(18,20,22,.82);
+      --radius:   10px;
+      --max:      1160px;
+      --warm-bg:  #c4ae84;
+      --warm-card:rgba(255,255,255,.22);
     }
-
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
       color: var(--ink);
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,255,255,0.028) 1px, transparent 1px),
-        radial-gradient(900px 520px at 22% 6%, rgba(217, 180, 101, 0.18), transparent 68%),
-        radial-gradient(760px 520px at 88% 16%, rgba(112, 199, 183, 0.13), transparent 64%),
-        linear-gradient(135deg, #070809 0%, #10100e 45%, #08110f 100%);
-      background-size: 44px 44px, 44px 44px, auto, auto, auto;
-      line-height: 1.55;
+      line-height: 1.6;
       overflow-x: hidden;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(7, 8, 9, 0) 0%, rgba(7, 8, 9, 0.72) 100%);
-      z-index: -1;
-    }
-
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    button { font: inherit; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; }
 
-    .shell {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
+    .wrap { width: min(var(--max), 100% - 48px); margin: 0 auto; }
 
+    /* ── TOPBAR ─────────────────────────────────────────────── */
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(7,8,9,.88);
       border-bottom: 1px solid var(--line);
-      background: rgba(7, 8, 9, 0.82);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
     }
-
     .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      min-height: 66px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 850;
-      letter-spacing: 0;
-    }
-
-    .brand img {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
+    .brand-icon {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,240,207,.9); padding: 4px;
       border: 1px solid var(--gold-line);
-      border-radius: 8px;
-      background: rgba(255, 240, 207, 0.92);
-      padding: 5px;
     }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .nav-links a:hover { color: var(--cream); }
-
+    .brand-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: .9rem; }
+    .nav-links a:hover { color: var(--ink); }
     .lang-toggle {
-      display: inline-flex;
-      padding: 3px;
-      border: 1px solid var(--gold-line);
-      border-radius: 999px;
-      background: rgba(255, 240, 207, 0.06);
+      display: inline-flex; padding: 3px;
+      border: 1px solid var(--gold-line); border-radius: 999px;
+      background: rgba(255,240,207,.05);
     }
-
     .lang-toggle button {
-      border: 0;
-      color: var(--muted);
-      background: transparent;
-      border-radius: 999px;
-      padding: 8px 11px;
-      font-weight: 850;
-      cursor: pointer;
+      border-radius: 999px; padding: 5px 11px;
+      color: var(--muted); font-weight: 700; font-size: .82rem;
     }
-
     .lang-toggle button.active {
-      color: #100e09;
-      background: linear-gradient(135deg, var(--gold), var(--cream));
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0d0b07;
     }
 
+    /* ── HERO ────────────────────────────────────────────────── */
     .hero {
-      min-height: calc(100vh - 74px);
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.88fr);
-      align-items: start;
-      gap: clamp(34px, 6vw, 78px);
-      padding: 60px 0 54px;
+      grid-template-columns: 1fr minmax(0, 460px);
+      gap: clamp(28px, 5vw, 70px);
+      padding: 64px 0 56px;
+      min-height: calc(100vh - 66px);
+      align-items: center;
     }
-
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin: 0 0 18px;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 900;
-      font-size: 0.78rem;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--teal); text-transform: uppercase;
+      letter-spacing: .1em; font-weight: 800; font-size: .74rem;
+      margin-bottom: 14px;
     }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--teal);
-    }
-
-    h1, h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      letter-spacing: 0;
-    }
-
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--teal); }
     h1 {
-      max-width: 850px;
-      font-size: clamp(2.75rem, 5.2vw, 5.2rem);
-      line-height: 0.96;
-    }
-
-    .gradient-text {
-      color: transparent;
-      background: linear-gradient(110deg, var(--cream), var(--gold) 48%, var(--teal));
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .hero-lead {
-      max-width: 720px;
-      margin: 24px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.28rem);
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .btn {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border-radius: 8px;
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      color: var(--cream);
-      background: rgba(255, 240, 207, 0.055);
-      font-weight: 900;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--gold-line);
-      background: rgba(255, 240, 207, 0.09);
-    }
-
-    .btn.primary {
-      color: #11100c;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--gold), var(--cream));
-    }
-
-    .signal-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 34px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+      line-height: 1.05;
       max-width: 760px;
     }
+    .hero-sub {
+      margin: 18px 0 30px;
+      color: var(--muted); font-size: 1rem; line-height: 1.72;
+      max-width: 560px;
+    }
+    .gold-t { color: var(--gold2); }
+    .teal-t { color: var(--teal); }
 
-    .signal {
-      position: relative;
-      min-height: 94px;
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: 11px 20px; border-radius: 8px;
+      font-weight: 700; font-size: .9rem;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, rgba(255, 240, 207, 0.075), rgba(255, 255, 255, 0.025));
-      padding: 15px;
-      overflow: hidden;
+      background: rgba(255,240,207,.06);
+      transition: background .18s, border-color .18s;
     }
-
-    .signal::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.8;
+    .btn:hover { background: rgba(255,240,207,.12); border-color: var(--gold-line); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0d0b07; border-color: transparent;
     }
+    .btn.primary:hover { opacity: .9; }
 
-    .signal strong {
-      display: block;
-      color: var(--cream);
-      font-size: 1.05rem;
+    .signal-strip { display: flex; gap: 2px; }
+    .signal-item {
+      flex: 1; padding: 15px 16px;
+      border: 1px solid var(--line); border-radius: 8px;
+      background: rgba(18,20,22,.6);
     }
+    .signal-item strong { display: block; font-size: .92rem; margin-bottom: 3px; }
+    .signal-item small { color: var(--muted); font-size: .78rem; }
 
-    .signal span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.88rem;
-      margin-top: 5px;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 620px;
-    }
-
-    .portrait-card {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: min(220px, 44%);
-      max-height: 310px;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255, 240, 207, 0.12), rgba(112, 199, 183, 0.08)), rgba(7, 8, 9, 0.9);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .portrait-card img {
-      width: 100%;
-      height: 310px;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .system-card {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: min(330px, 72%);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15, 17, 19, 0.82);
+    /* Hero right — warm panel */
+    .hero-panel {
+      background: linear-gradient(160deg, #cdb78c 0%, #b8a070 100%);
+      border-radius: 14px;
       padding: 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      z-index: 2;
+      display: flex; flex-direction: column; gap: 10px;
+      position: relative;
+      min-height: 500px;
     }
-
-    .system-card:nth-of-type(2) {
-      top: 225px;
-      left: 26px;
-      width: min(310px, 72%);
+    .sys-card {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--warm-card);
+      border-radius: 10px;
+      padding: 14px 16px;
     }
-
-    .system-card:nth-of-type(3) {
-      right: 18px;
-      left: auto;
-      top: 420px;
-      width: min(300px, 68%);
-    }
-
-    .system-card small {
-      display: block;
-      color: var(--quiet);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.72rem;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .system-card strong { color: var(--cream); }
-
-    .module-logo {
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--cream);
-      padding: 7px;
-    }
-
-    .module-logo img {
-      max-width: 100%;
-      max-height: 100%;
+    .sys-logo {
+      width: 68px; height: 68px; flex-shrink: 0;
       object-fit: contain;
+      background: rgba(255,255,255,.55); border-radius: 8px; padding: 7px;
+    }
+    .sys-label {
+      display: block; font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .1em; font-weight: 900; color: #3a2c18;
+      margin-bottom: 4px;
+    }
+    .sys-desc { font-size: .82rem; color: #3e3018; line-height: 1.5; margin: 0; }
+
+    .portrait-wrap {
+      position: absolute; right: 14px; bottom: 14px;
+      width: 150px; border-radius: 10px; overflow: hidden;
+      border: 2px solid rgba(255,255,255,.45);
+      box-shadow: 0 8px 30px rgba(0,0,0,.35);
+    }
+    .portrait-wrap img {
+      width: 100%; height: 190px;
+      object-fit: cover; object-position: top center;
     }
 
-    .connector {
-      position: absolute;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      height: 1px;
-      opacity: 0.52;
-      transform-origin: left center;
-    }
-
-    .connector.one { width: 220px; left: 250px; top: 182px; transform: rotate(20deg); }
-    .connector.two { width: 240px; left: 248px; top: 386px; transform: rotate(-17deg); }
-
-    section {
-      padding: 82px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.54fr);
-      gap: 30px;
-      align-items: end;
-      margin-bottom: 32px;
-    }
-
-    .kicker {
-      margin: 0 0 10px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      font-weight: 950;
-      font-size: 0.78rem;
-    }
-
+    /* ── SECTIONS ────────────────────────────────────────────── */
+    section { padding: 84px 0; }
     h2 {
-      font-size: clamp(2.2rem, 4.9vw, 4.8rem);
-      line-height: 0.96;
-    }
-
-    .section-copy {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .positioning {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      gap: 16px;
-    }
-
-    .statement {
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, rgba(217, 180, 101, 0.14), rgba(112, 199, 183, 0.075));
-      padding: clamp(24px, 4vw, 38px);
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .statement p {
-      margin: 0;
-      color: var(--cream);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.55rem, 3vw, 2.7rem);
+      font-size: clamp(1.9rem, 3.4vw, 3.6rem);
       line-height: 1.08;
     }
-
-    .role-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+    .kicker {
+      font-size: .73rem; text-transform: uppercase;
+      letter-spacing: .12em; font-weight: 900;
+      color: var(--teal); margin-bottom: 10px;
     }
-
-    .role, .pillar, .project-card, .timeline-item, .education-card, .ecosystem-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+    .sec-head {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 4vw, 60px);
+      align-items: end; margin-bottom: 44px;
     }
+    .sec-copy { color: var(--muted); line-height: 1.72; font-size: .97rem; }
 
-    .role {
-      min-height: 174px;
-      padding: 20px;
-    }
-
-    .role b, .pillar h3, .project-card h3, .timeline-item h3, .education-card h3 {
-      display: block;
-      color: var(--cream);
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-      letter-spacing: 0;
-    }
-
-    .role p, .pillar p, .project-card p, .timeline-item p, .education-card p, .ecosystem-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
+    /* ── POSITIONING ─────────────────────────────────────────── */
     .pillars {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
     }
-
     .pillar {
-      position: relative;
-      min-height: 310px;
-      padding: 22px;
-      overflow: hidden;
-      transition: transform 180ms ease, border-color 180ms ease;
+      padding: 28px 28px;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
     }
+    .pillar h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 12px; }
+    .pillar p  { color: var(--muted); font-size: .9rem; line-height: 1.68; }
 
-    .pillar:hover, .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold-line);
-    }
-
-    .icon-tile {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      margin-bottom: 18px;
-      color: #10100c;
-      background: linear-gradient(135deg, var(--gold), var(--cream));
-      font-weight: 950;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
-    }
-
-    .tag {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--cream);
-      background: rgba(255, 240, 207, 0.055);
-      padding: 6px 9px;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .projects-grid {
+    /* ── PROJECTS ────────────────────────────────────────────── */
+    .proj-grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 14px;
     }
-
-    .project-card {
-      min-height: 360px;
-      grid-column: span 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-      overflow: hidden;
-    }
-
-    .project-card.featured { grid-column: span 3; min-height: 390px; }
-    .project-card.creative { background: linear-gradient(150deg, rgba(112, 199, 183, 0.12), rgba(18, 20, 22, 0.86)); }
-    .project-card.trading { background: linear-gradient(150deg, rgba(217, 180, 101, 0.12), rgba(18, 20, 22, 0.88)); }
-    .project-card.identity { background: linear-gradient(150deg, rgba(255, 94, 158, 0.11), rgba(18, 20, 22, 0.86)); }
-
-    .project-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .logo-pad {
-      width: 88px;
-      height: 88px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--cream);
-      padding: 10px;
-    }
-
-    .logo-pad.dark {
-      background: #0b0c0e;
-      border-color: var(--gold-line);
-    }
-
-    .logo-pad img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .category {
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      font-size: 0.72rem;
-      font-weight: 950;
-    }
-
-    .project-card h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
-      line-height: 1.02;
-      margin-top: 8px;
-    }
-
-    .project-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 22px;
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .ecosystem {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .ecosystem-card {
-      padding: clamp(24px, 4vw, 36px);
-    }
-
-    .logo-system {
-      position: relative;
-      min-height: 480px;
+    .pcard {
+      grid-column: span 3;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,255,255,0.032) 1px, transparent 1px),
-        rgba(18, 20, 22, 0.56);
-      background-size: 38px 38px;
-      overflow: hidden;
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      padding: 24px 26px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .pcard.sm   { grid-column: span 2; }
+    .pcard.full { grid-column: span 6; flex-direction: row; align-items: center; gap: 24px; }
+
+    .ctop { display: flex; align-items: center; gap: 14px; }
+    .clogo {
+      width: 72px; height: 72px; flex-shrink: 0;
+      border-radius: 8px; background: #f7efe0;
+      padding: 10px; display: grid; place-items: center;
+    }
+    .clogo.dk { background: #0c0d0f; border: 1px solid var(--gold-line); }
+    .clogo img { width: 100%; height: 100%; object-fit: contain; }
+    .pcard.sm   .clogo { width: 60px; height: 60px; }
+    .pcard.full .clogo { width: 56px; height: 56px; }
+
+    .cat {
+      font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--teal); font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .ctitle { font-family: Georgia, serif; font-size: 1.5rem; color: var(--ink); line-height: 1.1; }
+    .pcard.sm   .ctitle { font-size: 1.15rem; }
+    .pcard.full .ctitle { font-size: 1.15rem; }
+
+    .pdesc { color: var(--muted); font-size: .88rem; line-height: 1.66; flex: 1; }
+    .pcard.full .pdesc { margin: 0; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 5px 11px; border: 1px solid var(--line);
+      border-radius: 999px; font-size: .77rem; color: var(--muted);
+    }
+    .plink {
+      display: inline-flex; align-items: center; gap: 5px;
+      color: var(--gold); font-weight: 700; font-size: .86rem;
+      margin-top: auto;
+    }
+    .plink:hover { color: var(--gold2); }
+    .pcard.full .plink { margin-left: auto; white-space: nowrap; }
+
+    /* ── ECOSYSTEM ───────────────────────────────────────────── */
+    .eco-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 64px); align-items: center;
+    }
+    .eco-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .eco-tag {
+      padding: 7px 16px; border: 1px solid var(--line);
+      border-radius: 999px; font-size: .84rem; font-weight: 600;
+    }
+    .logo-panel {
+      background: linear-gradient(145deg, #c8a43c 0%, #b08c22 50%, #d4ac40 100%);
+      border-radius: 16px; padding: 28px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+      min-height: 340px; align-items: center;
+    }
+    .lp-item {
+      background: rgba(255,255,255,.18);
+      border-radius: 10px; padding: 18px;
+      display: grid; place-items: center;
+    }
+    .lp-item.wide { grid-column: span 2; }
+    .lp-item img { max-width: 120px; max-height: 80px; object-fit: contain; }
+    .lp-item.wide img { max-width: 180px; max-height: 70px; }
+
+    /* ── EXPERIENCE ──────────────────────────────────────────── */
+    .exp-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 64px);
+    }
+    .exp-list { display: flex; flex-direction: column; gap: 30px; }
+    .exp-co   { font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+    .exp-role { color: var(--teal); font-size: .87rem; font-weight: 600; margin: 4px 0 7px; }
+    .exp-desc { color: var(--muted); font-size: .88rem; line-height: 1.62; }
+
+    .edu-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+      margin-bottom: 24px;
+    }
+    .edu-card {
+      padding: 16px 14px;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--panel);
+      font-size: .84rem; font-weight: 600; text-align: center;
+    }
+    .cert-title { font-size: .97rem; font-weight: 700; margin-bottom: 12px; }
+    .cert-tags  { display: flex; flex-wrap: wrap; gap: 6px; }
+    .cert-tag {
+      padding: 5px 12px;
+      border: 1px solid var(--gold-line); border-radius: 999px;
+      font-size: .78rem; color: var(--muted);
     }
 
-    .node {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 240, 207, 0.93);
-      padding: 14px;
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    .contact-sec {
+      text-align: center; padding: 96px 0 80px;
+      border-top: 1px solid var(--line);
     }
-
-    .node img { width: 100%; height: 110px; object-fit: contain; }
-    .node.dark { background: #0b0c0e; border-color: var(--gold-line); }
-    .node.one { left: 7%; top: 11%; }
-    .node.two { right: 9%; top: 15%; }
-    .node.three { left: 35%; top: 38%; }
-    .node.four { left: 10%; bottom: 12%; }
-    .node.five { right: 12%; bottom: 10%; }
-
-    .logo-system::before, .logo-system::after {
-      content: "";
-      position: absolute;
-      left: 16%;
-      right: 14%;
-      top: 50%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--teal), transparent);
-      opacity: 0.45;
+    .contact-sec h2 {
+      max-width: 700px; margin: 0 auto 48px;
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
     }
-
-    .logo-system::after {
-      transform: rotate(32deg);
+    .contact-links {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 12px; max-width: 440px; margin: 0 auto;
     }
-
-    .timeline-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 16px;
+    .contact-btn {
+      width: 100%; padding: 15px 24px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0d0b07; border-radius: 8px;
+      font-weight: 700; font-size: .93rem; text-align: center;
+      transition: opacity .18s;
     }
+    .contact-btn:hover { opacity: .88; }
 
-    .timeline-stack {
-      display: grid;
-      gap: 12px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 18px;
-      padding: 20px;
-    }
-
-    .timeline-item time {
-      color: var(--gold);
-      font-weight: 950;
-      font-size: 0.92rem;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .education-card {
-      padding: 20px;
-    }
-
-    .education-card.certifications {
-      grid-column: span 2;
-      background: linear-gradient(150deg, rgba(217, 180, 101, 0.12), rgba(18, 20, 22, 0.86));
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.5fr);
-      gap: 24px;
-      align-items: end;
-      border: 1px solid var(--gold-line);
-      border-radius: var(--radius);
-      padding: clamp(26px, 5vw, 48px);
-      background:
-        linear-gradient(135deg, rgba(217, 180, 101, 0.17), rgba(112, 199, 183, 0.09)),
-        rgba(15, 17, 19, 0.88);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel h2 { max-width: 820px; }
-    .contact-panel p { max-width: 680px; margin-top: 16px; }
-
+    /* ── FOOTER ──────────────────────────────────────────────── */
     footer {
-      padding: 34px 0 46px;
-      color: var(--quiet);
-      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+      padding: 22px 0; text-align: center;
+      color: var(--quiet); font-size: .8rem;
     }
+    footer a:hover { color: var(--muted); }
 
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 520ms ease, transform 520ms ease;
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; padding: 48px 0 40px; }
+      .hero-panel { min-height: auto; }
+      .portrait-wrap { width: 120px; }
+      .portrait-wrap img { height: 155px; }
+      .sec-head { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .pcard, .pcard.sm, .pcard.full { grid-column: span 6; }
+      .pcard.full { flex-direction: column; align-items: flex-start; }
+      .pcard.full .plink { margin-left: 0; }
+      .eco-layout { grid-template-columns: 1fr; }
+      .exp-layout { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
     }
-
-    [data-animate].visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      [data-animate] { opacity: 1; transform: none; }
-    }
-
-    @media (max-width: 1020px) {
-      .hero, .positioning, .ecosystem, .timeline-layout, .contact-panel { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 600px; max-width: 620px; margin: 0 auto; width: 100%; }
-      .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .project-card, .project-card.featured { grid-column: span 3; }
-    }
-
-    @media (max-width: 760px) {
-      .shell { width: min(100% - 28px, var(--max)); }
-      .brand span { display: none; }
-      .nav-links a { display: none; }
-      .hero { min-height: auto; padding: 48px 0 42px; }
-      h1 { font-size: clamp(2.45rem, 11.5vw, 3.55rem); line-height: 0.98; }
-      .signal-strip, .role-grid, .pillars, .education-grid, .section-head { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card, .project-card.featured { grid-column: span 1; min-height: auto; }
-      .hero-visual { min-height: auto; display: grid; gap: 12px; }
-      .portrait-card, .system-card, .system-card:nth-of-type(2), .system-card:nth-of-type(3) {
-        position: static;
-        width: 100%;
-      }
-      .portrait-card { order: -1; }
-      .connector { display: none; }
-      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-      .education-card.certifications { grid-column: span 1; }
-      .logo-system { min-height: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 14px; }
-      .logo-system::before, .logo-system::after { display: none; }
-      .node { position: static; width: 100%; min-height: 122px; }
-      .node.three { grid-column: span 2; }
-      .cta-row .btn { flex: 1 1 160px; }
-      section { padding: 60px 0; }
-    }
-
-    @media (max-width: 460px) {
-      .nav { min-height: 66px; }
-      .nav-actions { gap: 10px; }
-      .lang-toggle button { padding: 7px 9px; }
-      h1 { font-size: clamp(2.35rem, 11vw, 3.2rem); }
-      .cta-row .btn { width: 100%; flex-basis: 100%; }
-      .logo-system { grid-template-columns: 1fr; }
-      .node.three { grid-column: span 1; }
+    @media (max-width: 580px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      h1 { font-size: clamp(2.1rem, 10vw, 3rem); }
+      .nav-links { display: none; }
+      .signal-strip { flex-direction: column; gap: 8px; }
+      .logo-panel { grid-template-columns: 1fr; }
+      .lp-item.wide { grid-column: span 1; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <nav class="shell nav" aria-label="Principal">
-      <a class="brand" href="#top" aria-label="Pablo Alcocer Hurtado">
-        <img src="./archon-mark-black-gold.png" alt="Símbolo Archon de Pablo Alcocer Hurtado" width="76" height="76">
-        <span>Pablo Alcocer Hurtado</span>
-      </a>
-      <div class="nav-actions">
-        <div class="nav-links">
-          <a href="#positioning" data-i18n="navPositioning">Posicionamiento</a>
-          <a href="#build" data-i18n="navBuild">Construyo</a>
-          <a href="#projects" data-i18n="navProjects">Proyectos</a>
-          <a href="#contact" data-i18n="navContact">Contacto</a>
+
+<!-- NAV -->
+<header class="topbar">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#">
+        <div class="brand-icon">
+          <img src="./archon-mark-black-gold.png" alt="Archon mark">
         </div>
-        <div class="lang-toggle" aria-label="Idioma">
-          <button type="button" class="active" data-lang="es">ES</button>
-          <button type="button" data-lang="en">EN</button>
+        Pablo Alcocer Hurtado
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#positioning" data-i18n="navPos">Posicionamiento</a>
+          <a href="#projects"    data-i18n="navProj">Proyectos</a>
+          <a href="#experience"  data-i18n="navExp">Experiencia</a>
+          <a href="#contact"     data-i18n="navCont">Contacto</a>
+        </div>
+        <div class="lang-toggle">
+          <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+          <button id="btn-en"                onclick="setLang('en')">EN</button>
         </div>
       </div>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main id="top">
-    <section class="shell hero">
-      <div data-animate>
-        <p class="eyebrow" data-i18n="heroEyebrow">Pablo Alcocer Hurtado · IA + Marketing creativo</p>
-        <h1 data-i18n-html="heroTitle">IA, marketing y <span class="gradient-text">sistemas digitales</span> para operar mejor.</h1>
-        <p class="hero-lead" data-i18n="heroLead">Diseño automatizaciones, productos digitales y experiencias de marca con una idea clara: que la creatividad no se quede en presentación, que funcione como sistema.</p>
-        <div class="cta-row" aria-label="Acciones principales">
-          <a class="btn primary" href="#projects" data-i18n="ctaProjects">Ver proyectos</a>
-          <a class="btn" href="mailto:palcocerhurtado@gmail.com" data-i18n="ctaContact">Contactar</a>
-          <a class="btn" href="https://github.com/palcocerhurtado-tech" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/pablo-alcocer-hurtado-a0bb573b6" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-        <div class="signal-strip" aria-label="Resumen de perfil">
-          <div class="signal"><strong data-i18n="signalOneTitle">IA aplicada</strong><span data-i18n="signalOne">Criterio comercial, no ruido técnico.</span></div>
-          <div class="signal"><strong data-i18n="signalTwoTitle">Marketing</strong><span data-i18n="signalTwo">Estrategia, narrativa y conversión.</span></div>
-          <div class="signal"><strong data-i18n="signalThreeTitle">Sistemas</strong><span data-i18n="signalThree">Procesos, datos y producto digital.</span></div>
-        </div>
-      </div>
+<!-- HERO -->
+<section>
+  <div class="wrap">
+    <div class="hero">
 
-      <div class="hero-visual" data-animate>
-        <div class="connector one" aria-hidden="true"></div>
-        <div class="connector two" aria-hidden="true"></div>
-        <article class="system-card">
-          <div class="module-logo"><img src="./archon-mark-black-gold.png" alt="Logo de Archon, empresa de IA y marketing" width="120" height="84"></div>
-          <small data-i18n="systemOneLabel">Arquitectura de marca</small>
-          <strong data-i18n="systemOne">IA aplicada al negocio, mensajes claros y operaciones medibles.</strong>
-        </article>
-        <article class="system-card">
-          <div class="module-logo"><img src="./adv-archon-mark-black.png" alt="Logo de ADV Archon" width="96" height="96"></div>
-          <small data-i18n="systemTwoLabel">Asistente local</small>
-          <strong data-i18n="systemTwo">Herramientas personales que conectan archivos, memoria, agenda y ejecución.</strong>
-        </article>
-        <article class="system-card">
-          <div class="module-logo"><img src="./quantbot-archon-bot-mark.png" alt="Logo de QuantBot Archon" width="96" height="96"></div>
-          <small data-i18n="systemThreeLabel">Producto experimental</small>
-          <strong data-i18n="systemThree">Bots, prototipos y sistemas que prueban ideas en condiciones reales.</strong>
-        </article>
-        <div class="portrait-card">
-          <img src="./pablo-alcocer-portrait.jpg" alt="Retrato de Pablo Alcocer Hurtado" width="750" height="1000" fetchpriority="high">
+      <div class="hero-left">
+        <p class="eyebrow" data-i18n="eyebrow">Pablo Alcocer Hurtado · IA + Marketing Creativo</p>
+        <h1>IA, marketing y <span class="gold-t">sistemas</span> <span class="teal-t">digitales</span> para operar mejor.</h1>
+        <p class="hero-sub" data-i18n="heroCopy">Diseño automatizaciones, productos digitales y experiencias de marca con una idea clara: que la creatividad no se quede en presentación, que funcione como sistema.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn primary" data-i18n="ctaProj">Ver proyectos</a>
+          <a href="#contact"  class="btn"          data-i18n="ctaCont">Contactar</a>
+          <a href="https://github.com/palcocerhurtado-tech" target="_blank" class="btn">GitHub</a>
+          <a href="https://linkedin.com/in/pablo-alcocer-hurtado" target="_blank" class="btn">LinkedIn</a>
+        </div>
+        <div class="signal-strip">
+          <div class="signal-item">
+            <strong data-i18n="s1h">IA aplicada</strong>
+            <small  data-i18n="s1b">Criterio comercial, no ruido técnico.</small>
+          </div>
+          <div class="signal-item">
+            <strong data-i18n="s2h">Marketing</strong>
+            <small  data-i18n="s2b">Estrategia, narrativa y conversión.</small>
+          </div>
+          <div class="signal-item">
+            <strong data-i18n="s3h">Sistemas</strong>
+            <small  data-i18n="s3b">Procesos, datos y producto digital.</small>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section id="positioning">
-      <div class="shell">
-        <div class="section-head" data-animate>
+      <!-- Warm panel -->
+      <div class="hero-panel">
+        <div class="sys-card">
+          <img class="sys-logo" src="./archon-consultancies-wordmark-black.png" alt="Archon Consultancies logo">
           <div>
-            <p class="kicker" data-i18n="positioningKicker">Posicionamiento</p>
-            <h2 data-i18n="positioningTitle">No vendo herramientas. Diseño sistemas.</h2>
-          </div>
-          <p class="section-copy" data-i18n="positioningCopy">Mi perfil vive en el cruce entre inteligencia artificial, marketing creativo, automatización, operaciones y creación digital. La parte técnica importa, pero la pregunta siempre es comercial: qué mejora, qué ahorra, qué convierte y qué ordena.</p>
-        </div>
-        <div class="positioning">
-          <article class="statement" data-animate>
-            <p data-i18n="statement">Trabajo para transformar ideas sueltas en flujos, interfaces, mensajes y activos que pueden usarse, medirse y mejorar.</p>
-            <div class="skill-tags">
-              <span class="tag">Founder mindset</span>
-              <span class="tag">AI systems</span>
-              <span class="tag">Creative strategy</span>
-              <span class="tag">Automation</span>
-            </div>
-          </article>
-          <div class="role-grid" data-animate>
-            <article class="role"><b data-i18n="roleOneTitle">Consultor IA</b><p data-i18n="roleOne">Aterrizo inteligencia artificial en procesos concretos, con foco en utilidad, claridad y retorno operativo.</p></article>
-            <article class="role"><b data-i18n="roleTwoTitle">Marketing creativo</b><p data-i18n="roleTwo">Construyo mensajes, campañas y experiencias que no solo se ven bien: tienen intención estratégica.</p></article>
-            <article class="role"><b data-i18n="roleThreeTitle">Automatización</b><p data-i18n="roleThree">Conecto herramientas, datos y decisiones para reducir fricción y convertir trabajo repetitivo en sistema.</p></article>
-            <article class="role"><b data-i18n="roleFourTitle">Producto digital</b><p data-i18n="roleFour">Prototipo webs, asistentes, plantillas y bots que hacen visible una idea y permiten probarla rápido.</p></article>
+            <span class="sys-label" data-i18n="sys1h">Arquitectura de marca</span>
+            <p class="sys-desc" data-i18n="sys1b">Identidad y sistemas visuales, todo enfocado a generar el éxito dentro de las empresas.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="build">
-      <div class="shell">
-        <div class="section-head" data-animate>
+        <div class="sys-card">
+          <img class="sys-logo" src="./adv-archon-mark-black.png" alt="ADV Archon logo">
           <div>
-            <p class="kicker" data-i18n="buildKicker">Lo que construyo</p>
-            <h2 data-i18n="buildTitle">De la idea al sistema operativo.</h2>
+            <span class="sys-label" data-i18n="sys2h">Asistente local</span>
+            <p class="sys-desc" data-i18n="sys2b">IA primera para macOS y la primera local-first para arquitectos.</p>
           </div>
-          <p class="section-copy" data-i18n="buildCopy">Cada proyecto mezcla una parte de estrategia, una parte de interfaz y una parte de proceso. Ese cruce es donde aparece el valor.</p>
         </div>
-        <div class="pillars">
-          <article class="pillar" data-animate>
-            <div class="icon-tile">AI</div>
-            <h3 data-i18n="pillarOneTitle">Automatización e IA aplicada</h3>
-            <p data-i18n="pillarOne">Flujos que ayudan a ejecutar, revisar, clasificar, responder o decidir con menos fricción.</p>
-            <div class="skill-tags"><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Ollama</span><span class="tag">Agents</span></div>
-          </article>
-          <article class="pillar" data-animate>
-            <div class="icon-tile">MK</div>
-            <h3 data-i18n="pillarTwoTitle">Marketing creativo y estrategia</h3>
-            <p data-i18n="pillarTwo">Narrativa, campañas, marca y estructura comercial para convertir atención en confianza.</p>
-            <div class="skill-tags"><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">GA4</span><span class="tag">Copy</span></div>
-          </article>
-          <article class="pillar" data-animate>
-            <div class="icon-tile">PX</div>
-            <h3 data-i18n="pillarThreeTitle">Producto digital y prototipado</h3>
-            <p data-i18n="pillarThree">Landing pages, herramientas, templates y prototipos que permiten enseñar, vender o validar.</p>
-            <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">GitHub Pages</span></div>
-          </article>
-          <article class="pillar" data-animate>
-            <div class="icon-tile">OP</div>
-            <h3 data-i18n="pillarFourTitle">Operaciones, datos y sistemas</h3>
-            <p data-i18n="pillarFour">Procesos conectados, trazables y preparados para funcionar fuera de una presentación bonita.</p>
-            <div class="skill-tags"><span class="tag">Airtable</span><span class="tag">Make</span><span class="tag">n8n</span><span class="tag">Stripe</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="shell">
-        <div class="section-head" data-animate>
+        <div class="sys-card">
+          <img class="sys-logo" src="./quantbot-archon-bot-vertical.png" alt="QuantBot logo">
           <div>
-            <p class="kicker" data-i18n="projectsKicker">Showcase</p>
-            <h2 data-i18n="projectsTitle">Un ecosistema de proyectos, no una lista de repos.</h2>
-          </div>
-          <p class="section-copy" data-i18n="projectsCopy">Cada proyecto representa una dirección: consultoría IA, automatización, trading algorítmico, producción creativa, herramientas locales e identidad digital.</p>
-        </div>
-
-        <div class="projects-grid">
-          <a class="project-card featured" href="https://github.com/palcocerhurtado-tech/archon-consultancies" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">AI · Marketing · E-commerce</span><h3>Archon Consultancies</h3></div>
-                <div class="logo-pad dark"><img src="./archon-consultancies-wordmark-white.png" alt="Logo de Archon Consultancies" width="1000" height="589" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectArchon">La marca y laboratorio de consultoría donde convierto operaciones de e-commerce en sistemas automatizados, auditables y medibles con IA.</p>
-              <div class="skill-tags"><span class="tag">IA aplicada</span><span class="tag">Airtable</span><span class="tag">Make/n8n</span><span class="tag">Stripe</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-
-          <a class="project-card featured trading" href="https://github.com/palcocerhurtado-tech/quantbot" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">Trading · Python · Risk</span><h3>QuantBot</h3></div>
-                <div class="logo-pad"><img src="./quantbot-archon-bot-mark.png" alt="Logo de QuantBot, bot de trading" width="692" height="700" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectQuantbot">Bot de trading algorítmico para Binance Spot: señales, estrategia Elliott Wave Proxy, gestión de riesgo, backtesting y modo paper/live.</p>
-              <div class="skill-tags"><span class="tag">Python</span><span class="tag">Binance</span><span class="tag">Backtesting</span><span class="tag">Risk</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-
-          <a class="project-card creative" href="https://github.com/palcocerhurtado-tech/OpenStudio" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">AI Video · Creative Ops</span><h3>OpenStudio</h3></div>
-                <div class="logo-pad"><img src="./archon-mark-outline-gold.png" alt="Símbolo Archon asociado a producción creativa IA" width="1200" height="1114" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectOpenStudio">Plataforma de producción creativa con IA que une generación de assets, vídeo, lip sync y pipelines agentic end-to-end.</p>
-              <div class="skill-tags"><span class="tag">Next.js</span><span class="tag">Python</span><span class="tag">Remotion</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-
-          <a class="project-card" href="https://github.com/palcocerhurtado-tech/adv-archon" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">Local AI · macOS</span><h3>ADV Archon</h3></div>
-                <div class="logo-pad"><img src="./adv-archon-mark-black.png" alt="Logo de ADV Archon" width="691" height="700" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectAdv">Asistente local-first de terminal para macOS, con memoria SQLite, contexto del sistema, Gemini/Ollama y conectores personales.</p>
-              <div class="skill-tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">LLM</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-
-          <a class="project-card" href="https://github.com/palcocerhurtado-tech/tarjeta-contacto-plantilla" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">Template · Web</span><h3 data-i18n="cardProjectTitle">Tarjeta contacto plantilla</h3></div>
-                <div class="logo-pad"><img src="./archon-mark-black-gold.png" alt="Símbolo Archon para plantilla de contacto digital" width="1200" height="842" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectCard">Plantilla pública de tarjeta de contacto digital con QR y vCard, pensada para clonarse y publicarse fácilmente con GitHub Pages.</p>
-              <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">vCard</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-
-          <a class="project-card identity" href="https://github.com/palcocerhurtado-tech/palcocerhurtado-tech" target="_blank" rel="noreferrer" data-animate>
-            <div>
-              <div class="project-top">
-                <div><span class="category">Identity · GitHub</span><h3>palcocerhurtado-tech</h3></div>
-                <div class="logo-pad dark"><img src="./archon-consultancies-wordmark-white.png" alt="Logo de identidad digital de Pablo Alcocer Hurtado" width="1000" height="589" loading="lazy"></div>
-              </div>
-              <p data-i18n="projectProfile">Repositorio de identidad pública en GitHub: base para mostrar perfil, enlaces, proyectos y presencia técnica personal.</p>
-              <div class="skill-tags"><span class="tag">GitHub</span><span class="tag">Profile</span><span class="tag">Marca personal</span></div>
-            </div>
-            <div class="project-footer"><span data-i18n="projectCta">Ver proyecto</span><span>↗</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="ecosystem">
-      <div class="shell">
-        <div class="ecosystem">
-          <article class="ecosystem-card" data-animate>
-            <p class="kicker" data-i18n="ecosystemKicker">Ecosistema creativo</p>
-            <h2 data-i18n="ecosystemTitle">La misma dirección, distintas pruebas.</h2>
-            <p class="section-copy" data-i18n="ecosystemCopy">Mis proyectos no son piezas aisladas. Son pruebas de una misma dirección: construir sistemas útiles donde IA, marketing, producto y operaciones se cruzan.</p>
-            <div class="skill-tags">
-              <span class="tag">Archon Consultancies</span>
-              <span class="tag">ADV Archon</span>
-              <span class="tag">QuantBot</span>
-              <span class="tag">OpenStudio</span>
-              <span class="tag">Templates</span>
-            </div>
-          </article>
-          <div class="logo-system" aria-label="Galería de logos del ecosistema de proyectos" data-animate>
-            <div class="node one"><img src="./archon-mark-black-gold.png" alt="Logo principal de Archon IA y marketing" width="1200" height="842" loading="lazy"></div>
-            <div class="node two"><img src="./adv-archon-vertical-outline.png" alt="Logo vertical de ADV Archon" width="662" height="900" loading="lazy"></div>
-            <div class="node three dark"><img src="./archon-consultancies-wordmark-white.png" alt="Wordmark de Archon Consultancies en blanco" width="1000" height="589" loading="lazy"></div>
-            <div class="node four"><img src="./quantbot-archon-bot-vertical.png" alt="Logo vertical del bot de trading QuantBot" width="666" height="900" loading="lazy"></div>
-            <div class="node five"><img src="./archon-mark-outline-gold.png" alt="Versión outline del logo Archon" width="1200" height="1114" loading="lazy"></div>
+            <span class="sys-label" data-i18n="sys3h">Producto experimental</span>
+            <p class="sys-desc" data-i18n="sys3b">Plataformas de prueba condicionada por las ondas de Elliott para el trading de cripto activos.</p>
           </div>
         </div>
+        <div class="portrait-wrap">
+          <img src="./pablo-alcocer-portrait.jpg" alt="Pablo Alcocer Hurtado" loading="lazy">
+        </div>
       </div>
-    </section>
 
-    <section id="experience">
-      <div class="shell">
-        <div class="section-head" data-animate>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section id="positioning">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker" data-i18n="posK">Posicionamiento</p>
+        <h2 data-i18n="posH">No vendo herramientas. Diseño sistemas.</h2>
+      </div>
+      <p class="sec-copy" data-i18n="posB">Mi perfil vive en el cruce entre inteligencia artificial, marketing creativo, automatización, operaciones y creación digital. No construyo soluciones genéricas: diseño ecosistemas únicos para cada desafío operativo.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h3 data-i18n="p1h">Consultor IA</h3>
+        <p  data-i18n="p1b">Aterrizo inteligencia artificial en procesos concretos, desde una automatización de emails hasta una digitalización de base de datos pasando por un organigrama automático para redes sociales.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-i18n="p2h">Marketing creativo</h3>
+        <p  data-i18n="p2b">Construyo mensajes, campañas y experiencias, todo lo necesario para el éxito rotundo de una marca.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-i18n="p3h">Automatización</h3>
+        <p  data-i18n="p3b">Conecto herramientas, datos y decisiones. Usando Make, n8n, Claude o Python automatizo procesos que ahorran tiempo y dinero a las empresas.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-i18n="p4h">Producto digital</h3>
+        <p  data-i18n="p4b">Prototipo webs, asistentes, plantillas y bots, todo lo que una empresa necesita para posicionarse como la más puntera del mercado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker" data-i18n="prjK">Showcase</p>
+        <h2 data-i18n="prjH">Un ecosistema de proyectos, no una lista de repos.</h2>
+      </div>
+      <p class="sec-copy" data-i18n="prjB">Cada proyecto representa una dirección: consultoría IA, automatización, producto digital o identidad.</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Archon Consultancies -->
+      <div class="pcard">
+        <div class="ctop">
+          <div class="clogo dk">
+            <img src="./archon-consultancies-wordmark-white.png" alt="Archon Consultancies">
+          </div>
           <div>
-            <p class="kicker" data-i18n="experienceKicker">Trayectoria</p>
-            <h2 data-i18n="experienceTitle">Experiencia y formación con lectura de sistema.</h2>
-          </div>
-          <p class="section-copy" data-i18n="experienceCopy">La experiencia operativa, el marketing y la IA se conectan en una forma de trabajar: entender el problema, ordenar el proceso y construir algo que sirva.</p>
-        </div>
-        <div class="timeline-layout">
-          <div class="timeline-stack" data-animate>
-            <article class="timeline-item">
-              <time data-i18n="expOneDate">Actualidad</time>
-              <div><h3 data-i18n="expOneTitle">Archon Consultancies / ZC Publicidad Digital · Consultor y auditor de IA</h3><p data-i18n="expOneText">Diseño de infraestructuras algorítmicas, automatización para e-commerce, auditoría operativa y creación de activos digitales con enfoque comercial.</p></div>
-            </article>
-            <article class="timeline-item">
-              <time data-i18n="expTwoDate">Experiencia reciente</time>
-              <div><h3 data-i18n="expTwoTitle">Cegos · Colaborador digital</h3><p data-i18n="expTwoText">Apoyo en entornos digitales y uso de herramientas de IA, comunicación y organización para resolver tareas de forma clara y eficiente.</p></div>
-            </article>
-            <article class="timeline-item">
-              <time data-i18n="expThreeDate">Jun. 2021 - Ago. 2024</time>
-              <div><h3 data-i18n="expThreeTitle">Almacenes Manuel Martínez S.A. · Atención al público y almacén</h3><p data-i18n="expThreeText">Atención directa al cliente, reposición, descarga de mercancía, control de stock, orden del espacio de trabajo y soporte operativo.</p></div>
-            </article>
-          </div>
-          <div class="education-grid" data-animate>
-            <article class="education-card"><h3 data-i18n="studyOneTitle">Grado Superior en Marketing y Publicidad</h3><p>The Hub Kings Corner · Zaragoza</p></article>
-            <article class="education-card"><h3 data-i18n="studyTwoTitle">Bachillerato de Ciencias Sociales</h3><p>IES Molina de Aragón</p></article>
-            <article class="education-card"><h3 data-i18n="studyThreeTitle">Estancia académica internacional</h3><p>Halifax High School · Canadá</p></article>
-            <article class="education-card certifications"><h3 data-i18n="certsTitle">Certificaciones y herramientas</h3><div class="skill-tags"><span class="tag">Claude 101</span><span class="tag">Claude Code 101</span><span class="tag">Cowork</span><span class="tag">Subagents</span><span class="tag">Bedrock</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">GA4</span></div></article>
+            <p class="cat">AI · Marketing · E-commerce</p>
+            <p class="ctitle">Archon Consultancies</p>
           </div>
         </div>
+        <p class="pdesc" data-i18n="d1">La marca y laboratorio de consultoría donde convierto operaciones de e-commerce en sistemas automatizados, auditables y medibles con IA.</p>
+        <div class="tags">
+          <span class="tag">IA aplicada</span><span class="tag">Airtable</span><span class="tag">Make/n8n</span><span class="tag">Stripe</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech/archon-consultancies" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
       </div>
-    </section>
 
-    <section id="contact">
-      <div class="shell">
-        <div class="contact-panel" data-animate>
+      <!-- QuantBot -->
+      <div class="pcard">
+        <div class="ctop">
+          <div class="clogo">
+            <img src="./quantbot-archon-bot-mark.png" alt="QuantBot">
+          </div>
           <div>
-            <p class="kicker" data-i18n="contactKicker">Contacto</p>
-            <h2 data-i18n="contactTitle">Si tienes una idea, un proceso roto o un proyecto que necesita forma digital, podemos convertirlo en sistema.</h2>
-            <p class="section-copy" data-i18n="contactCopy">Hablemos de IA aplicada, marketing creativo, automatización o producto digital. Mejor si hay un problema real encima de la mesa.</p>
-          </div>
-          <div class="cta-row">
-            <a class="btn primary" href="mailto:palcocerhurtado@gmail.com">Email</a>
-            <a class="btn" href="https://github.com/palcocerhurtado-tech" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/pablo-alcocer-hurtado-a0bb573b6" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="https://archonconsultancies.com/" target="_blank" rel="noreferrer">Archon</a>
+            <p class="cat">Trading · Python · Risk</p>
+            <p class="ctitle">QuantBot</p>
           </div>
         </div>
+        <p class="pdesc" data-i18n="d2">Bot de trading algorítmico para Binance Spot: señales, estrategia Elliott Wave Proxy, gestión de riesgo, backtesting y modo paper/live.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Binance</span><span class="tag">Backtesting</span><span class="tag">Risk</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech/quantbot" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="shell">© 2026 Pablo Alcocer Hurtado · <span data-i18n="footer">IA, marketing creativo, automatización y producto digital.</span></div>
-  </footer>
+      <!-- OpenStudio -->
+      <div class="pcard sm">
+        <div class="ctop">
+          <div class="clogo">
+            <img src="./archon-mark-outline-gold.png" alt="OpenStudio">
+          </div>
+          <div>
+            <p class="cat">AI Video · Creative Ops</p>
+            <p class="ctitle">OpenStudio</p>
+          </div>
+        </div>
+        <p class="pdesc" data-i18n="d3">Plataforma de producción creativa con IA que une generación de assets, vídeo, lip sync y pipelines agentic end-to-end.</p>
+        <div class="tags">
+          <span class="tag">Next.js</span><span class="tag">Python</span><span class="tag">Remotion</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
+      </div>
 
-  <script>
-    const translations = {
-      es: {
-        navPositioning: "Posicionamiento",
-        navBuild: "Construyo",
-        navProjects: "Proyectos",
-        navContact: "Contacto",
-        heroEyebrow: "Pablo Alcocer Hurtado · IA + Marketing creativo",
-        heroTitle: 'IA, marketing y <span class="gradient-text">sistemas digitales</span> para operar mejor.',
-        heroLead: "Diseño automatizaciones, productos digitales y experiencias de marca con una idea clara: que la creatividad no se quede en presentación, que funcione como sistema.",
-        ctaProjects: "Ver proyectos",
-        ctaContact: "Contactar",
-        signalOneTitle: "IA aplicada",
-        signalOne: "Criterio comercial, no ruido técnico.",
-        signalTwoTitle: "Marketing",
-        signalTwo: "Estrategia, narrativa y conversión.",
-        signalThreeTitle: "Sistemas",
-        signalThree: "Procesos, datos y producto digital.",
-        systemOneLabel: "Arquitectura de marca",
-        systemOne: "IA aplicada al negocio, mensajes claros y operaciones medibles.",
-        systemTwoLabel: "Asistente local",
-        systemTwo: "Herramientas personales que conectan archivos, memoria, agenda y ejecución.",
-        systemThreeLabel: "Producto experimental",
-        systemThree: "Bots, prototipos y sistemas que prueban ideas en condiciones reales.",
-        positioningKicker: "Posicionamiento",
-        positioningTitle: "No vendo herramientas. Diseño sistemas.",
-        positioningCopy: "Mi perfil vive en el cruce entre inteligencia artificial, marketing creativo, automatización, operaciones y creación digital. La parte técnica importa, pero la pregunta siempre es comercial: qué mejora, qué ahorra, qué convierte y qué ordena.",
-        statement: "Trabajo para transformar ideas sueltas en flujos, interfaces, mensajes y activos que pueden usarse, medirse y mejorar.",
-        roleOneTitle: "Consultor IA",
-        roleOne: "Aterrizo inteligencia artificial en procesos concretos, con foco en utilidad, claridad y retorno operativo.",
-        roleTwoTitle: "Marketing creativo",
-        roleTwo: "Construyo mensajes, campañas y experiencias que no solo se ven bien: tienen intención estratégica.",
-        roleThreeTitle: "Automatización",
-        roleThree: "Conecto herramientas, datos y decisiones para reducir fricción y convertir trabajo repetitivo en sistema.",
-        roleFourTitle: "Producto digital",
-        roleFour: "Prototipo webs, asistentes, plantillas y bots que hacen visible una idea y permiten probarla rápido.",
-        buildKicker: "Lo que construyo",
-        buildTitle: "De la idea al sistema operativo.",
-        buildCopy: "Cada proyecto mezcla una parte de estrategia, una parte de interfaz y una parte de proceso. Ese cruce es donde aparece el valor.",
-        pillarOneTitle: "Automatización e IA aplicada",
-        pillarOne: "Flujos que ayudan a ejecutar, revisar, clasificar, responder o decidir con menos fricción.",
-        pillarTwoTitle: "Marketing creativo y estrategia",
-        pillarTwo: "Narrativa, campañas, marca y estructura comercial para convertir atención en confianza.",
-        pillarThreeTitle: "Producto digital y prototipado",
-        pillarThree: "Landing pages, herramientas, templates y prototipos que permiten enseñar, vender o validar.",
-        pillarFourTitle: "Operaciones, datos y sistemas",
-        pillarFour: "Procesos conectados, trazables y preparados para funcionar fuera de una presentación bonita.",
-        projectsKicker: "Showcase",
-        projectsTitle: "Un ecosistema de proyectos, no una lista de repos.",
-        projectsCopy: "Cada proyecto representa una dirección: consultoría IA, automatización, trading algorítmico, producción creativa, herramientas locales e identidad digital.",
-        projectArchon: "La marca y laboratorio de consultoría donde convierto operaciones de e-commerce en sistemas automatizados, auditables y medibles con IA.",
-        projectQuantbot: "Bot de trading algorítmico para Binance Spot: señales, estrategia Elliott Wave Proxy, gestión de riesgo, backtesting y modo paper/live.",
-        projectOpenStudio: "Plataforma de producción creativa con IA que une generación de assets, vídeo, lip sync y pipelines agentic end-to-end.",
-        projectAdv: "Asistente local-first de terminal para macOS, con memoria SQLite, contexto del sistema, Gemini/Ollama y conectores personales.",
-        cardProjectTitle: "Tarjeta contacto plantilla",
-        projectCard: "Plantilla pública de tarjeta de contacto digital con QR y vCard, pensada para clonarse y publicarse fácilmente con GitHub Pages.",
-        projectProfile: "Repositorio de identidad pública en GitHub: base para mostrar perfil, enlaces, proyectos y presencia técnica personal.",
-        projectCta: "Ver proyecto",
-        ecosystemKicker: "Ecosistema creativo",
-        ecosystemTitle: "La misma dirección, distintas pruebas.",
-        ecosystemCopy: "Mis proyectos no son piezas aisladas. Son pruebas de una misma dirección: construir sistemas útiles donde IA, marketing, producto y operaciones se cruzan.",
-        experienceKicker: "Trayectoria",
-        experienceTitle: "Experiencia y formación con lectura de sistema.",
-        experienceCopy: "La experiencia operativa, el marketing y la IA se conectan en una forma de trabajar: entender el problema, ordenar el proceso y construir algo que sirva.",
-        expOneDate: "Actualidad",
-        expOneTitle: "Archon Consultancies / ZC Publicidad Digital · Consultor y auditor de IA",
-        expOneText: "Diseño de infraestructuras algorítmicas, automatización para e-commerce, auditoría operativa y creación de activos digitales con enfoque comercial.",
-        expTwoDate: "Experiencia reciente",
-        expTwoTitle: "Cegos · Colaborador digital",
-        expTwoText: "Apoyo en entornos digitales y uso de herramientas de IA, comunicación y organización para resolver tareas de forma clara y eficiente.",
-        expThreeDate: "Jun. 2021 - Ago. 2024",
-        expThreeTitle: "Almacenes Manuel Martínez S.A. · Atención al público y almacén",
-        expThreeText: "Atención directa al cliente, reposición, descarga de mercancía, control de stock, orden del espacio de trabajo y soporte operativo.",
-        studyOneTitle: "Grado Superior en Marketing y Publicidad",
-        studyTwoTitle: "Bachillerato de Ciencias Sociales",
-        studyThreeTitle: "Estancia académica internacional",
-        certsTitle: "Certificaciones y herramientas",
-        contactKicker: "Contacto",
-        contactTitle: "Si tienes una idea, un proceso roto o un proyecto que necesita forma digital, podemos convertirlo en sistema.",
-        contactCopy: "Hablemos de IA aplicada, marketing creativo, automatización o producto digital. Mejor si hay un problema real encima de la mesa.",
-        footer: "IA, marketing creativo, automatización y producto digital."
-      },
-      en: {
-        navPositioning: "Positioning",
-        navBuild: "What I build",
-        navProjects: "Projects",
-        navContact: "Contact",
-        heroEyebrow: "Pablo Alcocer Hurtado · AI + Creative marketing",
-        heroTitle: 'AI, marketing and <span class="gradient-text">digital systems</span> for sharper operations.',
-        heroLead: "I design automations, digital products and brand experiences with one clear idea: creativity should not stay in a deck, it should work as a system.",
-        ctaProjects: "View projects",
-        ctaContact: "Contact",
-        signalOneTitle: "Applied AI",
-        signalOne: "Commercial judgment, not technical noise.",
-        signalTwoTitle: "Marketing",
-        signalTwo: "Strategy, narrative and conversion.",
-        signalThreeTitle: "Systems",
-        signalThree: "Processes, data and digital product.",
-        systemOneLabel: "Brand architecture",
-        systemOne: "AI applied to business, clear messaging and measurable operations.",
-        systemTwoLabel: "Local assistant",
-        systemTwo: "Personal tools connecting files, memory, agenda and execution.",
-        systemThreeLabel: "Experimental product",
-        systemThree: "Bots, prototypes and systems that test ideas in real conditions.",
-        positioningKicker: "Positioning",
-        positioningTitle: "I do not sell tools. I design systems.",
-        positioningCopy: "My profile lives at the intersection of artificial intelligence, creative marketing, automation, operations and digital creation. The technical layer matters, but the question is always commercial: what improves, what saves time, what converts and what brings order.",
-        statement: "I work to transform loose ideas into flows, interfaces, messages and assets that can be used, measured and improved.",
-        roleOneTitle: "AI consultant",
-        roleOne: "I bring artificial intelligence into concrete processes, focused on usefulness, clarity and operational return.",
-        roleTwoTitle: "Creative marketing",
-        roleTwo: "I build messages, campaigns and experiences that do more than look good: they carry strategic intent.",
-        roleThreeTitle: "Automation",
-        roleThree: "I connect tools, data and decisions to reduce friction and turn repetitive work into a system.",
-        roleFourTitle: "Digital product",
-        roleFour: "I prototype websites, assistants, templates and bots that make an idea visible and easy to test.",
-        buildKicker: "What I build",
-        buildTitle: "From idea to operating system.",
-        buildCopy: "Every project mixes strategy, interface and process. That intersection is where value appears.",
-        pillarOneTitle: "Automation and applied AI",
-        pillarOne: "Flows that help execute, review, classify, answer or decide with less friction.",
-        pillarTwoTitle: "Creative marketing and strategy",
-        pillarTwo: "Narrative, campaigns, brand and commercial structure to turn attention into trust.",
-        pillarThreeTitle: "Digital product and prototyping",
-        pillarThree: "Landing pages, tools, templates and prototypes that help show, sell or validate.",
-        pillarFourTitle: "Operations, data and systems",
-        pillarFour: "Connected, traceable processes built to work beyond a beautiful presentation.",
-        projectsKicker: "Showcase",
-        projectsTitle: "An ecosystem of projects, not a list of repos.",
-        projectsCopy: "Each project represents a direction: AI consulting, automation, algorithmic trading, creative production, local tools and digital identity.",
-        projectArchon: "The consulting brand and lab where I turn e-commerce operations into automated, auditable and measurable AI systems.",
-        projectQuantbot: "Algorithmic trading bot for Binance Spot: signals, Elliott Wave Proxy strategy, risk management, backtesting and paper/live modes.",
-        projectOpenStudio: "AI creative production platform combining asset generation, video, lip sync and end-to-end agentic pipelines.",
-        projectAdv: "Local-first macOS terminal assistant with SQLite memory, system context, Gemini/Ollama and personal connectors.",
-        cardProjectTitle: "Digital contact card template",
-        projectCard: "Public digital contact card template with QR and vCard, designed to be cloned and published easily with GitHub Pages.",
-        projectProfile: "Public GitHub identity repository: a base for showing profile, links, projects and personal technical presence.",
-        projectCta: "View project",
-        ecosystemKicker: "Creative ecosystem",
-        ecosystemTitle: "One direction, different proofs.",
-        ecosystemCopy: "My projects are not isolated pieces. They are proof of one direction: building useful systems where AI, marketing, product and operations meet.",
-        experienceKicker: "Background",
-        experienceTitle: "Experience and education with a systems lens.",
-        experienceCopy: "Operations, marketing and AI connect into a way of working: understand the problem, organize the process and build something useful.",
-        expOneDate: "Present",
-        expOneTitle: "Archon Consultancies / ZC Publicidad Digital · AI consultant and auditor",
-        expOneText: "Design of algorithmic infrastructures, e-commerce automation, operational audits and commercially focused digital assets.",
-        expTwoDate: "Recent experience",
-        expTwoTitle: "Cegos · Digital collaborator",
-        expTwoText: "Support in digital environments using AI, communication and organization tools to solve tasks clearly and efficiently.",
-        expThreeDate: "Jun. 2021 - Aug. 2024",
-        expThreeTitle: "Almacenes Manuel Martínez S.A. · Customer service and warehouse",
-        expThreeText: "Direct customer service, restocking, goods unloading, stock control, workplace organization and operational support.",
-        studyOneTitle: "Higher Degree in Marketing and Advertising",
-        studyTwoTitle: "Social Sciences Baccalaureate",
-        studyThreeTitle: "International academic stay",
-        certsTitle: "Certifications and tools",
-        contactKicker: "Contact",
-        contactTitle: "If you have an idea, a broken process or a project that needs digital shape, we can turn it into a system.",
-        contactCopy: "Let's talk about applied AI, creative marketing, automation or digital product. Even better if there is a real problem on the table.",
-        footer: "AI, creative marketing, automation and digital product."
-      }
-    };
+      <!-- ADV Archon -->
+      <div class="pcard sm">
+        <div class="ctop">
+          <div class="clogo">
+            <img src="./adv-archon-mark-black.png" alt="ADV Archon">
+          </div>
+          <div>
+            <p class="cat">Local AI · MacOS</p>
+            <p class="ctitle">ADV Archon</p>
+          </div>
+        </div>
+        <p class="pdesc" data-i18n="d4">Asistente local-first de terminal para macOS, con memoria SQLite, contexto del sistema, Gemini/Ollama y conectores personales.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">LLM</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech/adv-archon" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
+      </div>
 
-    const textNodes = document.querySelectorAll("[data-i18n]");
-    const htmlNodes = document.querySelectorAll("[data-i18n-html]");
-    const langButtons = document.querySelectorAll("[data-lang]");
+      <!-- Tarjeta contacto -->
+      <div class="pcard sm">
+        <div class="ctop">
+          <div class="clogo">
+            <img src="./archon-mark-black-gold.png" alt="Tarjeta contacto">
+          </div>
+          <div>
+            <p class="cat">Template · Web</p>
+            <p class="ctitle">Tarjeta contacto</p>
+          </div>
+        </div>
+        <p class="pdesc" data-i18n="d5">Plantilla pública de tarjeta de contacto digital con QR y vCard, pensada para clonarse y publicarse fácilmente con GitHub Pages.</p>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">vCard</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech/tarjeta-contacto-plantilla" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
+      </div>
 
-    function setLanguage(lang) {
-      const dict = translations[lang];
-      document.documentElement.lang = lang;
-      textNodes.forEach((node) => {
-        const value = dict[node.dataset.i18n];
-        if (value) node.textContent = value;
-      });
-      htmlNodes.forEach((node) => {
-        const value = dict[node.dataset.i18nHtml];
-        if (value) node.innerHTML = value;
-      });
-      langButtons.forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
-      localStorage.setItem("portfolio-language", lang);
+      <!-- palcocerhurtado-tech -->
+      <div class="pcard full">
+        <div class="ctop">
+          <div class="clogo dk">
+            <img src="./archon-consultancies-wordmark-white.png" alt="palcocerhurtado-tech">
+          </div>
+          <div>
+            <p class="cat">Identity · GitHub</p>
+            <p class="ctitle">palcocerhurtado-tech</p>
+          </div>
+        </div>
+        <p class="pdesc" data-i18n="d6">Repositorio de identidad pública en GitHub: base para mostrar perfil, enlaces, proyectos y presencia técnica personal.</p>
+        <div class="tags">
+          <span class="tag">GitHub</span><span class="tag">Profile</span><span class="tag">Marca personal</span>
+        </div>
+        <a href="https://github.com/palcocerhurtado-tech" target="_blank" class="plink" data-i18n="vp">Ver proyecto ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <div class="wrap">
+    <div class="eco-layout">
+      <div>
+        <p class="kicker" data-i18n="ecoK">Ecosistema creativo</p>
+        <h2 style="margin:10px 0 16px" data-i18n="ecoH">La misma dirección, distintas pruebas.</h2>
+        <p class="sec-copy" data-i18n="ecoB">Mis proyectos no son piezas aisladas. Son pruebas de una misma dirección: construir sistemas útiles donde IA, marketing y producto se cruzan.</p>
+        <div class="eco-badges">
+          <span class="eco-tag">Archon</span>
+          <span class="eco-tag">ADV</span>
+          <span class="eco-tag">QuantBot</span>
+          <span class="eco-tag">OpenStudio</span>
+          <span class="eco-tag">Templates</span>
+        </div>
+      </div>
+      <div class="logo-panel">
+        <div class="lp-item">
+          <img src="./archon-mark-black-gold.png" alt="Archon mark">
+        </div>
+        <div class="lp-item">
+          <img src="./adv-archon-vertical-outline.png" alt="ADV Archon">
+        </div>
+        <div class="lp-item wide">
+          <img src="./archon-consultancies-wordmark-black.png" alt="Archon Consultancies">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <p class="kicker" data-i18n="expK">Perfil</p>
+    <h2 style="margin-bottom:44px" data-i18n="expH">Perfil, experiencia y formación</h2>
+    <div class="exp-layout">
+      <div class="exp-list">
+        <div>
+          <div class="exp-co">Archon Consultancies / ZC Publicidad Digital</div>
+          <div class="exp-role" data-i18n="r1">Consultor y auditor de IA · 2026–presente</div>
+          <div class="exp-desc" data-i18n="e1">Diseño e implementación de flujos de IA aplicada a operaciones e-commerce.</div>
+        </div>
+        <div>
+          <div class="exp-co">Cegos</div>
+          <div class="exp-role" data-i18n="r2">Colaborador digital · 2025–2026</div>
+          <div class="exp-desc" data-i18n="e2">Apoyo en proyectos de formación y contenido digital.</div>
+        </div>
+        <div>
+          <div class="exp-co">Almacenes Manuel Martínez S.A.</div>
+          <div class="exp-role" data-i18n="r3">Atención al público · 2022–2024</div>
+          <div class="exp-desc" data-i18n="e3">Gestión de clientes y logística de almacén.</div>
+        </div>
+      </div>
+      <div>
+        <div class="edu-grid">
+          <div class="edu-card" data-i18n="edu1">Grado Superior Marketing y Publicidad</div>
+          <div class="edu-card" data-i18n="edu2">Bachillerato Ciencias Sociales</div>
+          <div class="edu-card" data-i18n="edu3">Halifax High School, Canadá</div>
+        </div>
+        <p class="cert-title" data-i18n="certH">Certificaciones</p>
+        <div class="cert-tags">
+          <span class="cert-tag">Claude 101</span>
+          <span class="cert-tag">Claude Code 101</span>
+          <span class="cert-tag">Cowork</span>
+          <span class="cert-tag">Subagents</span>
+          <span class="cert-tag">Bedrock</span>
+          <span class="cert-tag">Google Ads</span>
+          <span class="cert-tag">Meta Ads</span>
+          <span class="cert-tag">GA4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-sec">
+  <div class="wrap">
+    <h2 data-i18n="ctH">Si tienes una idea, un proceso roto o un proyecto que necesita forma digital, podemos convertirlo en sistema.</h2>
+    <div class="contact-links">
+      <a href="mailto:palcocerhurtado@gmail.com" class="contact-btn">palcocerhurtado@gmail.com</a>
+      <a href="https://linkedin.com/in/pablo-alcocer-hurtado" target="_blank" class="contact-btn">LinkedIn: /in/pablo-alcocer-hurtado</a>
+      <a href="https://github.com/palcocerhurtado-tech" target="_blank" class="contact-btn">GitHub: palcocerhurtado-tech</a>
+      <a href="https://archonconsultancies.com" target="_blank" class="contact-btn">archonconsultancies.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Pablo Alcocer Hurtado ·
+    <a href="https://archonconsultancies.com" target="_blank">archonconsultancies.com</a>
+  </div>
+</footer>
+
+<script>
+const T = {
+  es: {
+    navPos:"Posicionamiento", navProj:"Proyectos", navExp:"Experiencia", navCont:"Contacto",
+    eyebrow:"Pablo Alcocer Hurtado · IA + Marketing Creativo",
+    heroCopy:"Diseño automatizaciones, productos digitales y experiencias de marca con una idea clara: que la creatividad no se quede en presentación, que funcione como sistema.",
+    ctaProj:"Ver proyectos", ctaCont:"Contactar",
+    s1h:"IA aplicada", s1b:"Criterio comercial, no ruido técnico.",
+    s2h:"Marketing",   s2b:"Estrategia, narrativa y conversión.",
+    s3h:"Sistemas",    s3b:"Procesos, datos y producto digital.",
+    sys1h:"Arquitectura de marca", sys1b:"Identidad y sistemas visuales, todo enfocado a generar el éxito dentro de las empresas.",
+    sys2h:"Asistente local",       sys2b:"IA primera para macOS y la primera local-first para arquitectos.",
+    sys3h:"Producto experimental", sys3b:"Plataformas de prueba condicionada por las ondas de Elliott para el trading de cripto activos.",
+    posK:"Posicionamiento", posH:"No vendo herramientas. Diseño sistemas.",
+    posB:"Mi perfil vive en el cruce entre inteligencia artificial, marketing creativo, automatización, operaciones y creación digital. No construyo soluciones genéricas: diseño ecosistemas únicos para cada desafío operativo.",
+    p1h:"Consultor IA",      p1b:"Aterrizo inteligencia artificial en procesos concretos, desde una automatización de emails hasta una digitalización de base de datos pasando por un organigrama automático para redes sociales.",
+    p2h:"Marketing creativo",p2b:"Construyo mensajes, campañas y experiencias, todo lo necesario para el éxito rotundo de una marca.",
+    p3h:"Automatización",    p3b:"Conecto herramientas, datos y decisiones. Usando Make, n8n, Claude o Python automatizo procesos que ahorran tiempo y dinero a las empresas.",
+    p4h:"Producto digital",  p4b:"Prototipo webs, asistentes, plantillas y bots, todo lo que una empresa necesita para posicionarse como la más puntera del mercado.",
+    prjK:"Showcase", prjH:"Un ecosistema de proyectos, no una lista de repos.", prjB:"Cada proyecto representa una dirección: consultoría IA, automatización, producto digital o identidad.",
+    d1:"La marca y laboratorio de consultoría donde convierto operaciones de e-commerce en sistemas automatizados, auditables y medibles con IA.",
+    d2:"Bot de trading algorítmico para Binance Spot: señales, estrategia Elliott Wave Proxy, gestión de riesgo, backtesting y modo paper/live.",
+    d3:"Plataforma de producción creativa con IA que une generación de assets, vídeo, lip sync y pipelines agentic end-to-end.",
+    d4:"Asistente local-first de terminal para macOS, con memoria SQLite, contexto del sistema, Gemini/Ollama y conectores personales.",
+    d5:"Plantilla pública de tarjeta de contacto digital con QR y vCard, pensada para clonarse y publicarse fácilmente con GitHub Pages.",
+    d6:"Repositorio de identidad pública en GitHub: base para mostrar perfil, enlaces, proyectos y presencia técnica personal.",
+    vp:"Ver proyecto ↗",
+    ecoK:"Ecosistema creativo", ecoH:"La misma dirección, distintas pruebas.",
+    ecoB:"Mis proyectos no son piezas aisladas. Son pruebas de una misma dirección: construir sistemas útiles donde IA, marketing y producto se cruzan.",
+    expK:"Perfil", expH:"Perfil, experiencia y formación",
+    r1:"Consultor y auditor de IA · 2026–presente", e1:"Diseño e implementación de flujos de IA aplicada a operaciones e-commerce.",
+    r2:"Colaborador digital · 2025–2026",           e2:"Apoyo en proyectos de formación y contenido digital.",
+    r3:"Atención al público · 2022–2024",           e3:"Gestión de clientes y logística de almacén.",
+    edu1:"Grado Superior Marketing y Publicidad", edu2:"Bachillerato Ciencias Sociales", edu3:"Halifax High School, Canadá",
+    certH:"Certificaciones",
+    ctH:"Si tienes una idea, un proceso roto o un proyecto que necesita forma digital, podemos convertirlo en sistema.",
+  },
+  en: {
+    navPos:"Positioning", navProj:"Projects", navExp:"Experience", navCont:"Contact",
+    eyebrow:"Pablo Alcocer Hurtado · AI + Creative Marketing",
+    heroCopy:"I design automations, digital products and brand experiences with one clear idea: creativity should not stay in a presentation — it should work as a system.",
+    ctaProj:"See projects", ctaCont:"Contact",
+    s1h:"Applied AI",  s1b:"Commercial thinking, no technical noise.",
+    s2h:"Marketing",   s2b:"Strategy, narrative and conversion.",
+    s3h:"Systems",     s3b:"Processes, data and digital product.",
+    sys1h:"Brand architecture",    sys1b:"Visual identity and systems focused on generating success within companies.",
+    sys2h:"Local assistant",       sys2b:"AI-first for macOS and the first local-first for architects.",
+    sys3h:"Experimental product",  sys3b:"Test platforms conditioned by Elliott wave equations for crypto assets trading.",
+    posK:"Positioning", posH:"I don't sell tools. I design systems.",
+    posB:"My profile lives at the intersection of artificial intelligence, creative marketing, automation, operations and digital creation. I don't build generic solutions: I design unique ecosystems for each operational challenge.",
+    p1h:"AI Consultant",       p1b:"I apply AI to concrete processes: email automation, database digitization, automatic org charts for social media.",
+    p2h:"Creative Marketing",  p2b:"I build messages, campaigns and experiences — everything needed for a brand's resounding success.",
+    p3h:"Automation",          p3b:"I connect tools, data and decisions. Using Make, n8n, Claude or Python I automate processes that save companies time and money.",
+    p4h:"Digital Product",     p4b:"I prototype webs, assistants, templates and bots — everything a company needs to position itself at the cutting edge.",
+    prjK:"Showcase", prjH:"An ecosystem of projects, not a list of repos.", prjB:"Each project represents a direction: AI consulting, automation, digital product or identity.",
+    d1:"The consulting brand and lab where I turn e-commerce operations into automated, auditable and measurable systems with AI.",
+    d2:"Algorithmic trading bot for Binance Spot: signals, Elliott Wave Proxy strategy, risk management, backtesting and paper/live mode.",
+    d3:"Creative AI production platform unifying asset generation, video, lip sync and agentic end-to-end pipelines.",
+    d4:"Local-first terminal assistant for macOS with SQLite memory, system context, Gemini/Ollama and personal connectors.",
+    d5:"Public digital contact card template with QR and vCard, designed to be cloned and published easily with GitHub Pages.",
+    d6:"Public identity repository on GitHub: base for showcasing profile, links, projects and personal technical presence.",
+    vp:"View project ↗",
+    ecoK:"Creative ecosystem", ecoH:"Same direction, different tests.",
+    ecoB:"My projects are not isolated pieces. They are proofs of one direction: building useful systems where AI, marketing and product intersect.",
+    expK:"Profile", expH:"Profile, experience & education",
+    r1:"AI Consultant & Auditor · 2026–present",  e1:"Design and implementation of AI-applied flows for e-commerce operations.",
+    r2:"Digital Collaborator · 2025–2026",         e2:"Support on training and digital content projects.",
+    r3:"Customer Service · 2022–2024",             e3:"Client management and warehouse logistics.",
+    edu1:"Higher Degree in Marketing & Advertising", edu2:"Social Sciences Baccalaureate", edu3:"Halifax High School, Canada",
+    certH:"Certifications",
+    ctH:"If you have an idea, a broken process or a project that needs digital form, we can turn it into a system.",
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (T[lang][k] !== undefined) el.textContent = T[lang][k];
+  });
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+}
+
+// Subtle fade-in on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
     }
+  });
+}, { threshold: 0.08 });
 
-    langButtons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
-    setLanguage(localStorage.getItem("portfolio-language") || "es");
-
-    const animated = document.querySelectorAll("[data-animate]");
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      animated.forEach((node) => observer.observe(node));
-    } else {
-      animated.forEach((node) => node.classList.add("visible"));
-    }
-  </script>
+document.querySelectorAll('.pillar, .pcard, .exp-list > div').forEach(el => {
+  el.style.cssText += 'opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease';
+  io.observe(el);
+});
+</script>
 </body>
 </html>
